@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "livefeed"
+version = "0.1.0"
+description = "Capture Windows 11 Live Captions and stream them to a browser extension"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp>=3.9",
+    "comtypes>=1.4",
+    "psutil>=5.9",
+]
+
+[project.optional-dependencies]
+dev = ["ruff>=0.5"]
+
+[project.scripts]
+livefeed = "livefeed.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["livefeed*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

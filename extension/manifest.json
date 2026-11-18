@@ -1,0 +1,47 @@
+{
+  "manifest_version": 3,
+  "name": "LiveFeed Captions",
+  "version": "0.3.2",
+  "description": "Connects to the LiveFeed app and sends a caption slice into ChatGPT or DeepSeek.",
+  "action": {
+    "default_title": "LiveFeed Captions",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://chat.deepseek.com/*"
+      ],
+      "js": ["chat.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["connect_button.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": ["tabs", "scripting"],
+  "host_permissions": [
+    "http://127.0.0.1:17865/*",
+    "http://localhost:17865/*",
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*",
+    "https://chat.deepseek.com/*"
+  ]
+}

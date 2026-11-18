@@ -1,0 +1,121 @@
+:root {
+  color-scheme: dark;
+  --bg: #11161c;
+  --panel: #1a222c;
+  --text: #e8eef6;
+  --muted: #93a0b0;
+  --accent: #3dd6c6;
+  --danger: #ff8a80;
+  --line: #2a3542;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-width: 280px;
+  background: var(--bg);
+  color: var(--text);
+  font: 13px/1.45 "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  padding: 14px;
+}
+
+header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.sub,
+.server,
+.message {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+.server {
+  margin: 12px 0;
+}
+
+.badge {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 3px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.badge.stopped {
+  background: #2a3340;
+  color: #c2ccd8;
+}
+
+.badge.starting {
+  background: #2d3b28;
+  color: #d7e08a;
+}
+
+.badge.running {
+  background: #163833;
+  color: var(--accent);
+}
+
+.badge.connected {
+  background: #1b2a40;
+  color: #9ec5ff;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.preview {
+  margin-top: 10px;
+  color: #c9d6e4;
+  max-height: 90px;
+  overflow: auto;
+}
+
+button {
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--accent);
+  color: #08221f;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.message {
+  margin-top: 10px;
+  color: var(--danger);
+  white-space: pre-wrap;
+}

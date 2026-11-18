@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LiveFeed</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>LiveFeed</h1>
+        <p id="version" class="sub">v0.3.2 · ChatGPT / DeepSeek</p>
+      </div>
+      <span id="badge" class="badge stopped">Offline</span>
+    </header>
+    <p id="server" class="server">Looking for the LiveFeed app…</p>
+    <div class="actions">
+      <button id="connect" type="button">Connect</button>
+    </div>
+    <p id="preview" class="preview" hidden></p>
+    <p id="message" class="message" hidden></p>
+    <script src="popup.js"></script>
+  </body>
+</html>
